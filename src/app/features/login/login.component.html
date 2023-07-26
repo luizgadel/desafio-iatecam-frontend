@@ -5,36 +5,21 @@
     <mat-label>Credenciais</mat-label>
     <mat-form-field appearance="fill">
       <mat-label>Email</mat-label>
-      <input
-        matInput
-        placeholder="email@mail.com"
-        formControlName="email"
-        #input3
-      />
+      <input matInput placeholder="email@mail.com" formControlName="email" #input3 />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Senha</mat-label>
-      <input
-        matInput
-        placeholder="******"
-        type="password"
-        formControlName="password"
-      />
+      <input matInput placeholder="******" type="password" formControlName="password" />
     </mat-form-field>
     <div class="row">
-      <button mat-button type="button" [routerLink]="['', 'signup']">É um novo usuário?</button>
-      <button
-        class="ml-auto"
-        mat-raised-button
-        color="accent"
-        type="button"
-        (click)="submit()"
-        [disabled]="isSubmitting"
-      >
+      <button mat-button type="button" [routerLink]="['', 'signup']">
+        É um novo usuário?
+      </button>
+      <button class="ml-auto" mat-raised-button color="accent" type="button" (click)="submit()"
+        [disabled]="isSubmitting">
         Concluir
         <mat-spinner [diameter]="18" *ngIf="isSubmitting"></mat-spinner>
       </button>
     </div>
   </form>
 </mat-card>
-  
