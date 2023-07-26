@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+@use "@angular/material" as mat;
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import "theme.scss";
+
+$primary-color: mat.get-color-from-palette($primary-palette);
+
+* {
+  font-family: "Roboto", Arial, sans-serif;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: #fafafa;
+}

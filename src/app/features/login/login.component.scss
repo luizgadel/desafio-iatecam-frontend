@@ -1,0 +1,65 @@
+@use "sass:map";
+@import "../../../theme.scss";
+
+:host {
+  padding: 1rem;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: map.get($md-primary, 200);
+}
+
+mat-label {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+form > * {
+  width: 100%;
+}
+
+.mat-card-title,
+.mat-card-subtitle {
+  text-align: center;
+}
+
+.mat-card-title {
+  margin-top: 1rem !important;
+}
+
+.mat-card-subtitle {
+  margin-bottom: 2rem;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  width: auto !important;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1.5rem;
+  width: 350px;
+}
+
+button {
+  margin-top: 2rem;
+
+  ::ng-deep.mat-button-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+}
+
+.ml-auto {
+  margin-left: auto;
+}
