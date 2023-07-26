@@ -4,6 +4,7 @@ import { LoginComponent } from './features/login/login.component';
 import { HomeComponent } from './features/home/home.component';
 import { AuthGuard } from './_guard/auth.guard';
 import { LoginGuard } from './_guard/login.guard';
+import { SignupComponent } from './features/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
     canActivate: [LoginGuard]
   },
   {

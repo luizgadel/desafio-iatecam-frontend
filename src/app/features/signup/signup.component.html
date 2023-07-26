@@ -1,0 +1,29 @@
+<mat-card>
+  <div mat-card-title>Cadastro de Usuário</div>
+  <div mat-card-subtitle>Passo 1 de 1</div>
+  <form (keydown.enter)="submit($event)" [formGroup]="form">
+    <mat-label>Digite seus dados</mat-label>
+    <mat-form-field appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput autofocus formControlName="name" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="email@mail.com" formControlName="email" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Senha</mat-label>
+      <input matInput placeholder="******" type="password" formControlName="password" />
+    </mat-form-field>
+    <div class="row">
+      <button mat-button type="button" [routerLink]="['', 'login']">
+        Voltar ao login
+      </button>
+      <button class="ml-auto" mat-raised-button color="accent" type="button" (click)="submit($event)"
+        [disabled]="isSubmitting">
+        Concluir
+        <mat-spinner [diameter]="18" *ngIf="isSubmitting"></mat-spinner>
+      </button>
+    </div>
+  </form>
+</mat-card>
