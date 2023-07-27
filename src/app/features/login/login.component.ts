@@ -26,7 +26,7 @@ export class LoginComponent {
       ]),
       password: new FormControl('', [
         Validators.required,
-        Validators.minLength(8),
+        Validators.minLength(6),
       ]),
     });
   }
@@ -39,11 +39,10 @@ export class LoginComponent {
       var user: User = {
         ...this.form.getRawValue(),
       };
-      console.log('Usuário formado: ', user);
 
-      this.userService.authenticate(user.email, user.password).subscribe({
+      this.userService.authenticate(user).subscribe({
         next: (userFound) => {
-          if (userFound !== null) {
+          if (userFound) {
             console.log('Usuário encontrado.');
             this.isSubmitting = false;
 

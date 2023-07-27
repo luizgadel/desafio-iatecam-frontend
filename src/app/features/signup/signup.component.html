@@ -1,7 +1,7 @@
 <mat-card>
   <div mat-card-title>Cadastro de Usuário</div>
   <div mat-card-subtitle>Passo 1 de 1</div>
-  <form (keydown.enter)="submit($event)" [formGroup]="form">
+  <form (keydown.enter)="submit()" [formGroup]="form">
     <mat-label>Digite seus dados</mat-label>
     <mat-form-field appearance="fill">
       <mat-label>Nome</mat-label>
@@ -19,7 +19,7 @@
       <button mat-button type="button" [routerLink]="['', 'login']">
         Voltar ao login
       </button>
-      <button class="ml-auto" mat-raised-button color="accent" type="button" (click)="submit($event)"
+      <button class="ml-auto" mat-raised-button color="accent" type="button" (click)="submit()"
         [disabled]="isSubmitting">
         Concluir
         <mat-spinner [diameter]="18" *ngIf="isSubmitting"></mat-spinner>

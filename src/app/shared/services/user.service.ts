@@ -1,18 +1,23 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { User } from './models/user.interface';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpErrorResponse } from '@angular/common/http'
 import { environment } from 'src/environments/environment.prod';
+import { MessageService } from 'primeng/api'
+import { Router } from '@angular/router';
 
 const JWT_TOKEN = 'token';
+const USER_ID = 'user_id';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  loggedInUsers = new BehaviorSubject<User>(null!);
+  private API_URL = `${environment.backend_API_URL}/api`;
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private messageService: MessageService,
+    private router: Router,
   ) { }
 
   getJwtToken() {
@@ -23,34 +28,54 @@ export class UserService {
     return this.getJwtToken();
   }
 
-  authenticate(email: string, password: string) {
-    this.list().subscribe({
-      next: (users) => {
-        if (users != null) {
-          var user = users.find(
-            (u) => u.email == email && u.password == password
-          );
+  authenticate(user: User) {
+    var loginSubject = new BehaviorSubject<Boolean>(null!);
 
-          if (user != undefined) {
-            this.loggedInUsers.next(user);
-          }
-        }
+    this.http.post<User>(`${this.API_URL}/authenticate`, user)
+    .subscribe({
+      next: (res) => {
+        localStorage.setItem(USER_ID, res.userId);
+        this.storeToken(res.name);
+        loginSubject.next(true);
+      },
+      error: (error: HttpErrorResponse) => {
+        console.log(error);
+        this.messageService.add({
+          severity: 'error',
+          detail: 'Email ou senha incorretos',
+        })
+        loginSubject.next(false);
       }
     })
 
-    return this.loggedInUsers.asObservable();
+    return loginSubject.asObservable();
   }
 
-  list() {
-    var usersSubject = new BehaviorSubject<User[]>(null!);
+  private storeToken(token: string) {
+    localStorage.setItem(JWT_TOKEN, token);
+  }
 
-    this.http.get<{ users: User[] }>(environment.backend_API_URL + '/').subscribe({
-      next: (data) => usersSubject.next(data.users),
-      error: (err) => console.log('Erro ao listar usuários:', err),
+  logout() {
+    if (this.isLoggedIn()) {
+      this.removeToken();
+      this.router.navigate(['login'])
+    }
+  }
+
+  private removeToken() {
+    localStorage.removeItem(JWT_TOKEN);
+  }
+
+  create(user: User) {
+    var usersSubject = new BehaviorSubject<User>(null!);
+
+    this.http.post<User>(`${this.API_URL}/user`, user)
+    .subscribe({
+      next: (data) => usersSubject.next(data),
+      error: (err) => console.log('Erro ao criar usuário: ', err),
     });
 
     return usersSubject.asObservable();
   }
-
 
 }
