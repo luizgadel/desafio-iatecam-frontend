@@ -15,7 +15,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon'
 import { MessageService } from 'primeng/api';
+import { SideBarComponent } from './core/components/side-bar/side-bar.component';
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import { MessageService } from 'primeng/api';
     LoginComponent,
     HomeComponent,
     SignupComponent,
+    SideBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { MessageService } from 'primeng/api';
     MatInputModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
+    MatIconModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

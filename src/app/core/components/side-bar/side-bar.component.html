@@ -1,0 +1,13 @@
+<div class="menu-item" *ngFor="let menu of menus">
+    <a [routerLink]="menu.route">
+        <mat-icon>{{menu.icon}}</mat-icon>
+        {{menu.name}}
+    </a>
+</div>
+
+<div class="menu-item">
+    <a (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        Sair
+    </a>
+</div>
