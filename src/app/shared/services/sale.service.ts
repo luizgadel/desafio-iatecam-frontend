@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Sale } from './models/sales.interface';
 
-const API_URL = environment.mock_API_URL + '/sales';
+const API_URL = environment.mock_API_URL + '/sale';
 
 @Injectable({
   providedIn: 'root'
