@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
@@ -22,11 +23,16 @@ export class SideBarComponent {
   ]
   
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private router: Router,
   ) {}
 
   logout() {
     console.log('a');
     this.userService.logout();
+  }
+
+  navigateTo(route: string) {
+    this.router.navigate([route]);
   }
 }

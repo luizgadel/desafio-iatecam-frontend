@@ -1,5 +1,5 @@
 <div class="menu-item" *ngFor="let menu of menus">
-    <a [routerLink]="menu.route">
+    <a (click)="navigateTo(menu.route)">
         <mat-icon>{{menu.icon}}</mat-icon>
         {{menu.name}}
     </a>

@@ -18,6 +18,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon'
 import { MessageService } from 'primeng/api';
 import { SideBarComponent } from './core/components/side-bar/side-bar.component';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { SideBarComponent } from './core/components/side-bar/side-bar.component'
     HomeComponent,
     SignupComponent,
     SideBarComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
