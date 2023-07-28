@@ -21,6 +21,8 @@
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
     "@material/card": "^14.0.0",
+    "chart.js": "^4.3.2",
+    "miragejs": "^0.1.47",
     "primeicons": "^5.0.0",
     "primeng": "^13.0.0",
     "rxjs": "~7.5.0",

@@ -25,6 +25,9 @@ import { MenubarModule } from 'primeng/menubar';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
+import { TableModule } from 'primeng/table';
+import { PanelModule } from 'primeng/panel';
+import { ChartModule } from 'primeng/chart';
 
 
 @NgModule({
@@ -55,6 +58,9 @@ import { DashboardComponent } from './features/dashboard/dashboard.component';
     MenubarModule,
     ToolbarModule,
     ButtonModule,
+    TableModule,
+    PanelModule,
+    ChartModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
