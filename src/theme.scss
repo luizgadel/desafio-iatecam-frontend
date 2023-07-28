@@ -4,20 +4,20 @@
 @include mat.core();
 
 $md-primary: (
-  50: #fbf4e9,
-  100: #f5e3c8,
-  200: #eed0a3,
-  300: #e7bd7e,
-  400: #e1af62,
-  500: #dca146,
-  600: #d8993f,
-  700: #d38f37,
-  800: #ce852f,
-  900: #c57420,
-  A100: #fffefd,
-  A200: #ffe4ca,
-  A400: #ffc997,
-  A700: #ffbc7e,
+  50: #E8EAF6,
+  100: #C5CAE9,
+  200: #9FA8DA,
+  300: #7986CB,
+  400: #5C6BC0,
+  500: #3F51B5,
+  600: #3949AB,
+  700: #303F9F,
+  800: #283593,
+  900: #1A237E,
+  A100: #8C9EFF,
+  A200: #536DFE,
+  A400: #3D5AFE,
+  A700: #304FFE,
   contrast: (
     50: #000000,
     100: #000000,
@@ -36,41 +36,8 @@ $md-primary: (
   ),
 );
 
-$md-secondary: (
-  50: #e6eef3,
-  100: #c0d5e0,
-  200: #96b9cc,
-  300: #6b9cb8,
-  400: #4c87a8,
-  500: #2c7299,
-  600: #276a91,
-  700: #215f86,
-  800: #1b557c,
-  900: #10426b,
-  A100: #a0d1ff,
-  A200: #6db8ff,
-  A400: #3a9fff,
-  A700: #2092ff,
-  contrast: (
-    50: #000000,
-    100: #000000,
-    200: #000000,
-    300: #000000,
-    400: #ffffff,
-    500: #ffffff,
-    600: #ffffff,
-    700: #ffffff,
-    800: #ffffff,
-    900: #ffffff,
-    A100: #000000,
-    A200: #000000,
-    A400: #000000,
-    A700: #ffffff,
-  ),
-);
-
-$primary-palette: mat.define-palette($md-primary);
-$secondary-palette: mat.define-palette($md-secondary);
+$primary-palette: mat.define-palette(mat.$indigo-palette);
+$secondary-palette: mat.define-palette($md-primary);
 
 $my-theme: mat.define-light-theme(
   (

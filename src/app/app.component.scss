@@ -1,3 +1,9 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+@import "../theme.scss";
+
+$primary-color: map.get($md-primary, 200);
+
 :host {
     display: flex;
     flex-direction: row;
@@ -9,4 +15,9 @@ app-side-bar {
     padding: 0 8px;
     background-color: gray;
     height: 100%;
+}
+
+.container {
+    background-color: $primary-color;
+    width: 100%;
 }

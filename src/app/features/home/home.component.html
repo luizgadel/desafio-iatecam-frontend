@@ -1,2 +1,27 @@
-<p>home works!</p>
-<button (click)="logout()">Sair</button>
+<div class="center-div">
+    <p-toolbar>
+        <div class="p-toolbar-group-start">
+            <h2>Lista de Produtos</h2>
+        </div>
+        <div class="p-toolbar-group-end">
+            <p-button label="Novo Produto" icon="pi pi-plus" class="mr-2" (click)="openCreateProductDialog()"></p-button>
+        </div>
+    </p-toolbar>
+    <mat-card *ngFor="let product of products" class="product-card">
+        <mat-card-header>
+            <mat-card-title>{{product.description}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="./../../../assets/no-image.png">
+        <mat-card-content>
+            <p>
+                <span class="money-dolar-part">R$</span>
+                <span class="money-integer-part">{{product.value}}</span>
+            </p>
+            <p>Unidades em estoque: {{product.quantity}}</p>
+        </mat-card-content>
+        <mat-card-actions class="centralize-items">
+            <p-button label="Comprar" styleClass="p-button-rounded p-button-success" icon="pi pi-shopping-cart" class="mr-2"></p-button>
+        </mat-card-actions>
+    </mat-card>
+
+</div>

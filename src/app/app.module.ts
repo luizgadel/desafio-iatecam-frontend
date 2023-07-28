@@ -9,15 +9,21 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './features/login/login.component';
 import { HomeComponent } from './features/home/home.component';
 import { SignupComponent } from './features/signup/signup.component';
+import { SideBarComponent } from './core/components/side-bar/side-bar.component';
+import { AddProductComponent } from './features/add-product/add-product.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+
 import { MessageService } from 'primeng/api';
-import { SideBarComponent } from './core/components/side-bar/side-bar.component';
+import { MenubarModule } from 'primeng/menubar';
+import { ToolbarModule } from 'primeng/toolbar';
+import { ButtonModule } from 'primeng/button';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 
@@ -28,6 +34,7 @@ import { DashboardComponent } from './features/dashboard/dashboard.component';
     HomeComponent,
     SignupComponent,
     SideBarComponent,
+    AddProductComponent,
     DashboardComponent,
   ],
   imports: [
@@ -43,6 +50,11 @@ import { DashboardComponent } from './features/dashboard/dashboard.component';
     ReactiveFormsModule,
     MatProgressSpinnerModule,
     MatIconModule,
+    MatDialogModule,
+
+    MenubarModule,
+    ToolbarModule,
+    ButtonModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

@@ -12,7 +12,7 @@ const USER_ID = 'user_id';
   providedIn: 'root'
 })
 export class UserService {
-  private API_URL = `${environment.backend_API_URL}/api`;
+  private API_URL = `${environment.backend_API_URL}`;
 
   constructor(
     private http: HttpClient,
