@@ -1,27 +1,37 @@
 # DesafioDevIatecam
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
+Esse projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 15.0.1. No entanto, por fins de reuso de componentes, a versão utilizada para rodar esse projeto é a 13.3.11.
 
-## Development server
+# Como rodar
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Assumindo que você já tenha instalado o Node.js e o Angular CLI, os passos são os seguintes:
+1. Abra uma janela do aplicativo "Prompt de comando" ou "Git Bash".
+2. Em seguida, execute o comando "npm install". Esse comando instalará os pacotes necessários do Node para execução do projeto. Você deve receber uma saída parecida com a abaixo:
+"
+added 1005 packages, and audited 1000 packages in 1m
+123 packages are looking for funding
+    run `npm fund` for details
+"
+3. Após a instalação dos pacotes, execute o comando `ng serve -o`. Esse comando iniciará um servidor que ficará executando a aplicação e abrirá a página inicial da aplicação no endereço `http://localhost:4200`. OBS: Neste passo, se você estiver usando Windows, evite utilizar o Powershell para executar o comando, pois particularmente ele não estava me deixando executar comandos do Angular CLI.
+4. Fim. Após o 3° passo, o aplicação está sendo executada e você pode utilizá-la.
 
-## Code scaffolding
+# Como acessar
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Após iniciar o servidor da aplicação, basta acessar o endereço `http://localhost:4200`.
 
-## Build
+# Como realizar login
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+No momento, o banco de dados está mockado então qualquer conjunto de email e senha válidos consegue logar no sistema. A condição para que um email seja válido é que ele tenha o formato "a@b.c" e para uma senha, que ela tenha 6 ou mais caracteres.
 
-## Running unit tests
+# Status das funcionalidades
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+As funcionalidades a seguir estão disponíveis na aplicação:
+- Realizar login;
+- Cadastrar usuário;
+- Visualizar lista de produtos;
+- Visualizar dashboard;
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+As funcionalidades a seguir não estão finalizadas:
+- Cadastro de produto;
+- Cadastro de categoria;
+- Compra;
