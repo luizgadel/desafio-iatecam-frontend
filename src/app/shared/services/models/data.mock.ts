@@ -19,28 +19,28 @@ export const users: Array<User> = [
 
 export const products: Array<Product> = [
     {
-        description: "Celular Vermelho",
+        description: "Smartphone Samsung Galaxy A03",
         value: 900,
         categoryId: 1,
         quantity: 1,
         productId: "1"
     },
     {
-        description: "Caderno Azul",
+        description: "Smart TV LG 32LG621CB5B",
         value: 45,
         categoryId: 2,
         quantity: 15,
         productId: "2"
     },
     {
-        description: "TV Preta",
+        description: "Fritadeira Easy Fry 3,2L Red Arno",
         value: 2200,
         categoryId: 3,
         quantity: 6,
         productId: "3"
     },
     {
-        description: "Ventilador Branco",
+        description: "Celular Iphone 11 5G",
         value: 150,
         categoryId: 4,
         quantity: 120,

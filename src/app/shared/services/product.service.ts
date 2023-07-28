@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Product } from './models/product.interface';
 import { environment } from 'src/environments/environment.prod';
 
-const API_URL = environment.backend_API_URL + '/product'
+const API_URL = environment.mock_API_URL + '/product'
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +16,8 @@ export class ProductService {
   list() {
     var productsSubject = new BehaviorSubject<any[]>(null!);
 
-    this.http.get(API_URL).subscribe({
-      next: (data: any) => productsSubject.next(data),
+    this.http.get<{products: Product[]}>(API_URL).subscribe({
+      next: (data: any) => productsSubject.next(data.products),
       error: (err) => console.log('Erro ao listar produtos:', err)
     })
 

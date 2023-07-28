@@ -12,7 +12,7 @@ const USER_ID = 'user_id';
   providedIn: 'root'
 })
 export class UserService {
-  private API_URL = `${environment.backend_API_URL}`;
+  private API_URL = `${environment.mock_API_URL}`;
 
   constructor(
     private http: HttpClient,
@@ -31,11 +31,11 @@ export class UserService {
   authenticate(user: User) {
     var loginSubject = new BehaviorSubject<Boolean>(null!);
 
-    this.http.post<User>(`${this.API_URL}/authenticate`, user)
+    this.http.post<{user: User}>(`${this.API_URL}/authenticate`, user)
     .subscribe({
       next: (res) => {
-        localStorage.setItem(USER_ID, res.userId);
-        this.storeToken(res.name);
+        localStorage.setItem(USER_ID, res.user.userId);
+        this.storeToken(res.user.name);
         loginSubject.next(true);
       },
       error: (error: HttpErrorResponse) => {
@@ -69,9 +69,9 @@ export class UserService {
   create(user: User) {
     var usersSubject = new BehaviorSubject<User>(null!);
 
-    this.http.post<User>(`${this.API_URL}/user`, user)
+    this.http.post<{user: User}>(`${this.API_URL}/user`, user)
     .subscribe({
-      next: (data) => usersSubject.next(data),
+      next: (data) => usersSubject.next(data.user),
       error: (err) => console.log('Erro ao criar usuário: ', err),
     });
 
